@@ -1,2 +1,5 @@
-mensajes.db
+venv/
 __pycache__/
+*.pyc
+data/mensajes.db
+.env

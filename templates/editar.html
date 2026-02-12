@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Editar mensaje</title>
+</head>
+<body>
+
+<h1>Editar mensaje</h1>
+
+<form action="{{ url_for('actualizar', id=mensaje['id']) }}" method="POST">
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" value="{{ mensaje['nombre'] }}" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" value="{{ mensaje['email'] }}" required><br><br>
+
+    <label>Mensaje:</label><br>
+    <textarea name="mensaje" required>{{ mensaje['mensaje'] }}</textarea><br><br>
+
+    <button type="submit">Actualizar</button>
+</form>
+
+<a href="{{ url_for('mensajes') }}">Cancelar</a>
+
+</body>
+</html>

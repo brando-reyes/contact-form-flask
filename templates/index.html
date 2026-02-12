@@ -7,14 +7,18 @@
 <body>
     <h1>Formulario de contacto</h1>
 
-    <form method="POST">
-        <label>Nombre:</label><br>
-        <input type="text" name="nombre"><br><br>
+<form method="POST">
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
 
-        <label>Mensaje:</label><br>
-        <textarea name="mensaje"></textarea><br><br>
+    <label>Email:</label><br>
+    <input type="email" name="email" placeholder="Tu email" required><br><br>
 
-        <button type="submit">Enviar</button>
-    </form>
+    <label>Mensaje:</label><br>
+    <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+
 </body>
 </html>

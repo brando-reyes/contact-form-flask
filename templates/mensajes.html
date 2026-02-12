@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Mensajes</title>
+    <title>Mensajes guardados</title>
 </head>
 <body>
-    <h1>Mensajes guardados</h1>
 
-    <ul>
-        {% for nombre, mensaje in mensajes %}
-            <li><strong>{{ nombre }}</strong>: {{ mensaje }}</li>
-        {% endfor %}
-    </ul>
+<h1>Mensajes</h1>
 
-    <a href="/">Volver</a>
+{% if mensajes %}
+    {% for mensaje in mensajes %}
+        <p>
+            <strong>{{ mensaje["nombre"] }}</strong><br>
+            {{ mensaje["email"] }}<br>
+            {{ mensaje["mensaje"] }}
+        </p>
+
+        <form action="{{ url_for('eliminar', id=mensaje['id']) }}" method="POST" style="display:inline;">
+            <button type="submit" onclick="return confirm('¿Seguro que quieres eliminar este mensaje?');">Eliminar</button>
+        </form>
+
+        <a href="{{ url_for('editar', id=mensaje['id']) }}">Editar</a>
+
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>No hay mensajes todavía.</p>
+{% endif %}
+
+<a href="{{ url_for('home') }}">Volver</a>
+
 </body>
 </html>
+
