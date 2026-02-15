@@ -1,28 +1,24 @@
-# Contact Form CRUD - Flask
+# Contact Form – Flask Backend
 
-Aplicación CRUD desarrollada con Flask y SQLite.
+Aplicación web desarrollada con Flask que permite registrar, listar, editar y eliminar mensajes de contacto.
 
-## Funcionalidades
-
-- Crear mensajes
-- Ver mensajes guardados
-- Editar mensajes
-- Eliminar mensajes
-- Confirmación antes de eliminar
-- Redirección segura (PRG pattern)
-
-## Tecnologías usadas
-
+## Tecnologías
 - Python
 - Flask
+- Flask-SQLAlchemy
 - SQLite
-- HTML
-- Jinja2
+- HTML + Jinja2
 
-## Cómo ejecutar el proyecto
+## Funcionalidades
+- Crear mensajes desde formulario
+- Listar mensajes almacenados
+- Editar mensajes existentes
+- Eliminar mensajes
+- Persistencia de datos con ORM (SQLAlchemy)
 
-1. Clonar el repositorio
-2. Crear entorno virtual
-3. Instalar dependencias:
-pip insall -r requeriments.txt
-4. Ejecutar
+## Instalación
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
